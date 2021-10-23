@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import SignUp from './SignUp'
+import LoginDialog from './LoginPage/LoginDialog'
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
@@ -9,7 +9,7 @@ ReactDOM.render(
   //   <App />
   // </React.StrictMode>,
   <React.StrictMode>
-    <SignUp/>
+    <LoginDialog />
   </React.StrictMode>,
   document.getElementById('root')
 );
