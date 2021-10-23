@@ -1,7 +1,10 @@
 import React from "react";
+import Navigation from "./Navigation";
 
 function RRequests() {
   return (
+    <>
+    <Navigation />
     <div className="">
       <div class="">
         <div class="">
@@ -24,6 +27,7 @@ function RRequests() {
         </div>
       </div>
     </div>
+    </>
   );
 }
 
