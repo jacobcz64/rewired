@@ -1,6 +1,6 @@
 import React from "react";
 
-function RMakeRequestt() {
+function RMakeRequest() {
   return (
     <div className="">
       <div class="">

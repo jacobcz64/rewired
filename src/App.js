@@ -5,7 +5,10 @@ import {
   Route,
 } from "react-router-dom";
 
-import { Navigation, RRequests, RHistory, RMakeRequest} from "components";
+import Navigation from "./components/Navigation";
+import RHistory from "./components/RHistory";
+import RMakeRequest from "./components/RMakeRequest";
+import RRequests from "./components/RRequests";
 
 export default function App() {
   return (
