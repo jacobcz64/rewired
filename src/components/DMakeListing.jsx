@@ -1,9 +1,9 @@
 import React from "react";
-import Navigation from "./DNavigation";
+import DNavigation from "./DNavigation";
 function DMakeListing() {
   return (
     <>
-    <Navigation />
+    <DNavigation />
     <div className="">
       <div class="">
         <div class="">

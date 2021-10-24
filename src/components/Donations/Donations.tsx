@@ -1,7 +1,9 @@
 import HistoryEntry from './HistoryEntry';
 import { useState } from 'react';
 import "./history.css";
-import CreateEntryDialog from './CreateEntryDialog';
+import CreateEntryDialog from './CreateEntryDialog'
+import Navigation from "../DNavigation";
+import Search from "../files/Vector.png";
 import Dialog from '@mui/material/Dialog';
 import { DialogTitle } from '@material-ui/core';
 import { render } from '@testing-library/react';
@@ -23,7 +25,7 @@ export default class DonationHistory extends React.Component<DonationHistoryProp
         this.state = {
             createEntryDialogIsOpen: false,
             successDialogIsOpen: false,
-            history: [<HistoryEntry key={1} name='Microsoft' quantity={420} date='2'/>]
+            history: []
         }
     }
     // const [createEntryDialogIsOpen, setCreateEntryDialogIsOpen] = useState(false);
@@ -40,6 +42,16 @@ export default class DonationHistory extends React.Component<DonationHistoryProp
         console.log(body);
         return body;
     };
+    postNewListing = async (brand: string, type: string, model: string, quantity: number, donor_id: number) => {
+        console.log("posting");
+        await fetch('/listing', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({brand: brand, device_type: type, model: model, quantity: quantity, id: donor_id})
+        }).then(() => console.log("posted"))
+    }
 
     handleCancel = () => {
         this.setState({
@@ -47,19 +59,29 @@ export default class DonationHistory extends React.Component<DonationHistoryProp
         });
     }
 
-    handleConfirm = (deviceName: string, quantity: number) => {
+    handleConfirm = async (brand: string, type: string, model: string, quantity: number, donor_id: number) => {
         let today = new Date();
         let date = (today.getMonth() + 1) + "/" + today.getDate() + "/" + today.getFullYear();
-        // setHistory(history.concat([<HistoryEntry name={deviceName} quantity={quantity} date={date}/>]))
-        this.setState(() => {
-            return {successDialogIsOpen: true, createEntryDialogIsOpen: false}
-        })
-        // setCreateEntryDialogIsOpen(false);
-        // setSuccessDialogIsOpen(true);
-        // setTimeout(() => {setSuccessDialogIsOpen(false)}, 2500);
-        setTimeout(() => {this.setState({
-            successDialogIsOpen: false
-        })}, 2500);
+        this.postNewListing(brand, type, model, quantity, donor_id).then(async () => {
+            let updatedHistory = await this.getHistory();
+            let newHistory : any[] = [];
+            Object.keys(updatedHistory).forEach((i) => {
+                console.log(typeof updatedHistory)
+                console.log(updatedHistory[i]);
+                newHistory.push(<HistoryEntry key={updatedHistory[i].listing_id} name={updatedHistory[i].model} quantity={updatedHistory[i].quantity} date='10/24/2021'/>);
+            })
+            this.setState({
+                history: newHistory
+            });
+        }).then(() => {
+            this.setState(() => {
+                return {successDialogIsOpen: true, createEntryDialogIsOpen: false}
+            })
+        }).then(() => {
+            setTimeout(() => {this.setState({
+                successDialogIsOpen: false
+            })}, 2500);
+        })        
     }
     
     async componentDidMount() {
@@ -72,8 +94,6 @@ export default class DonationHistory extends React.Component<DonationHistoryProp
             newHistory.push(<HistoryEntry key={updatedHistory[i].listing_id} name={updatedHistory[i].model} quantity={updatedHistory[i].quantity} date='10/24/2021'/>);
         })
         this.setState({
-            createEntryDialogIsOpen: false,
-            successDialogIsOpen: false,
             history: newHistory
         });
     }
@@ -81,6 +101,13 @@ export default class DonationHistory extends React.Component<DonationHistoryProp
     render() {
         return (
             <div>
+                <Navigation />
+                    <p className="page-title">Pending Donations</p>
+                    <img
+                    id="search-img"
+                    src={Search}
+                    alt=""
+                />
                 <p>Donation History</p>
                 <input type="text" placeholder="Search.."></input>
                 <div id='history'>

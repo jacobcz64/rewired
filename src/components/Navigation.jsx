@@ -7,38 +7,38 @@ function Navigation(props) {
         <div className = "navigation">
             <div class = "nav-bar">
                 <div class = "nav-buttons">
-                    <li
-                        id = "home"
+                    <div
+                        id = "first-item"
                         class={`nav-item  ${
                         props.location.pathname === "/Requests" ? "active" : ""
                         }`}
                     >
                         <Link class="nav-link" to="/Requests">
-                            Requests
+                            Make a new donation
                         </Link>
-                    </li>
+                    </div>
 
-                    <li
-                        id = "RHistory"
+                    <div
+                        id = "middle-item"
                         class={`nav-item  ${
                         props.location.pathname === "/Rhistory" ? "active" : ""
                         }`}
                     >
                         <Link class="nav-link" to="/Rhistory">
-                            History
+                            view donation history
                         </Link>
-                    </li>
+                    </div>
                     
-                    <li
-                        id = "resume"
+                    <div
+                        id = "last-item"
                         class={`nav-item  ${
                         props.location.pathname === "/makerequests" ? "active" : ""
                         }`}
                     >
                         <Link class="nav-link" to="/makerequests">
-                            Make a request
+                            team profile
                         </Link>
-                    </li>
+                    </div>
 
 
 

@@ -3,13 +3,15 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import App from './App';
-import DonationHistory from './components/DonationHistory/DonationHistory'
 
 window.localStorage.setItem('recipientId', 1);
 window.localStorage.setItem('donorId', 1)
 
 ReactDOM.render(
-  <DonationHistory />,
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+
 
   document.getElementById('root')
 );
