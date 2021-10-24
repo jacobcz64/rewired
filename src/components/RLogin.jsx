@@ -4,23 +4,17 @@ import { Link, withRouter } from "react-router-dom";
 function RLogin(props) {
     
     return (
-        <div className = "navigation">
-            <div class = "nav-bar">
-                <div class = "nav-buttons">
-                    <li
-                        id = "home"
-                        class={`nav-item  ${
-                        props.location.pathname === "/RRequests" ? "active" : ""
-                        }`}
-                    >
-                        <Link class="nav-link" to="/RRequests">
-                            RRequests
-                        </Link>
-                    </li>
-                </div>
+
+                    <div
                 
-            </div>
-        </div>
+                        class="login"
+                    >
+                        <Link class="login-button" to="/Requests">
+                            Login
+                        </Link>
+                    </div>
+
+                
     );
 }
 

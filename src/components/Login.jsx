@@ -2,25 +2,25 @@ import React from "react";
 import DLogin from "./DLogin";
 import Navigation from "./Navigation";
 import RLogin from "./RLogin";
-function RHistory() {
+function Login() {
   return (
-    <>
-    <RLogin />
-    <DLogin />
-    <div className="">
-      <div class="">
-        <div class="">
-          <div class="col-lg-5">
-            <h1 class="font-weight-light"></h1>
-            <p>
-              This is login page
-            </p>
-          </div>
-        </div>
+    <div id="login-screen">
+      <div class="logins">
+        <div class="login-title">LOGIN AS RECIPIENT</div>
+        <input class="login-inputs" type="text" placeholder="Username" />
+        <input class="login-inputs" type="text" placeholder="Password" />
+        <RLogin />  
       </div>
+      <div class="vertical-line"> </div>
+      <div class="logins">
+        <div class="login-title">LOGIN AS DONOR</div>
+        <input class="login-inputs" type="text" placeholder="Username" />
+        <input class="login-inputs" type="text" placeholder="Password" />
+        <DLogin />
+      </div>
+      
     </div>
-    </>
   );
 }
 
-export default RHistory;
+export default Login;
