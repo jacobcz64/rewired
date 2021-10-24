@@ -1,7 +1,9 @@
 import React from "react";
-
+import Navigation from "./Navigation";
 function RHistory() {
   return (
+    <>
+    <Navigation />
     <div className="">
       <div class="">
         <div class="">
@@ -24,6 +26,7 @@ function RHistory() {
         </div>
       </div>
     </div>
+    </>
   );
 }
 

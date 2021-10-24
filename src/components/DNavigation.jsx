@@ -10,21 +10,21 @@ function Navigation(props) {
                     <li
                         id = "home"
                         class={`nav-item  ${
-                        props.location.pathname === "/Requests" ? "active" : ""
+                        props.location.pathname === "/Listings" ? "active" : ""
                         }`}
                     >
-                        <Link class="nav-link" to="/Requests">
-                            Requests
+                        <Link class="nav-link" to="/Listings">
+                            Listings
                         </Link>
                     </li>
 
                     <li
                         id = "RHistory"
                         class={`nav-item  ${
-                        props.location.pathname === "/Rhistory" ? "active" : ""
+                        props.location.pathname === "/Dhistory" ? "active" : ""
                         }`}
                     >
-                        <Link class="nav-link" to="/Rhistory">
+                        <Link class="nav-link" to="/Dhistory">
                             History
                         </Link>
                     </li>
@@ -32,11 +32,11 @@ function Navigation(props) {
                     <li
                         id = "resume"
                         class={`nav-item  ${
-                        props.location.pathname === "/makerequests" ? "active" : ""
+                        props.location.pathname === "/makeListing" ? "active" : ""
                         }`}
                     >
-                        <Link class="nav-link" to="/makerequests">
-                            Make a request
+                        <Link class="nav-link" to="/makeListing">
+                            Make Listings
                         </Link>
                     </li>
 
