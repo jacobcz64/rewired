@@ -10,10 +10,10 @@ import RHistory from "./components/RHistory";
 import RMakeRequest from "./components/RMakeRequest";
 import RRequests from "./components/RRequests";
 import Login from "./components/Login";
-import DListing from "./components/DListings";
 import DMakeListing from "./components/DMakeListing";
 import DHistory from "./components/DHistory";
 import logo from "./components/files/RW.png";
+import DListing from './components/Donations/Donations'
 
 export default function App() {
   return (

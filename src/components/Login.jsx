@@ -4,6 +4,8 @@ import Navigation from "./Navigation";
 import RLogin from "./RLogin";
 function Login() {
   return (
+    <>
+    <div id="logo-space"> </div> 
     <div id="login-screen">
       <div class="logins">
         <div class="login-title">LOGIN AS RECIPIENT</div>
@@ -20,6 +22,7 @@ function Login() {
       </div>
       
     </div>
+    </>
   );
 }
 

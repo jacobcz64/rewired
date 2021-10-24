@@ -2,6 +2,8 @@ import HistoryEntry from './HistoryEntry';
 import { useState } from 'react';
 import "./history.css";
 import CreateEntryDialog from './CreateEntryDialog'
+import Navigation from "../DNavigation";
+import Search from "../files/Vector.png";
 
 
 export default function DonationHistory() {
@@ -20,19 +22,27 @@ export default function DonationHistory() {
         setDialogIsOpen(false);
     }
     return (
-        <div>
-            <p>Donation History</p>
-            <input type="text" placeholder="Search.."></input>
-            <div id='history'>
-                {history}
+        <>
+            <Navigation />
+            <p className="page-title">Pending Donations</p>
+            <img
+              id="search-img"
+              src={Search}
+              alt=""
+            />
+            <input id="search-bar" type="text" placeholder="Search.."></input>
+            <div className="donation-box">
+                <div className="donation-entry">
+                    {history}
+                </div>
             </div>
-            <button onClick={() => {
+            <button className="add" onClick={() => {
                 setDialogIsOpen(true);
             }}>Add New Listing</button>
             <CreateEntryDialog open={dialogIsOpen}
                                text="Add new listing"
                                handleCancel={handleCancel}
                                handleConfirm={handleConfirm}/>
-        </div>
+        </>
     );
 }

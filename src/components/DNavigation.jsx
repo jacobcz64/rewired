@@ -1,44 +1,44 @@
 import React from "react";
 import { Link, withRouter } from "react-router-dom";
 
-function Navigation(props) {
+function DNavigation(props) {
     
     return (
         <div className = "navigation">
             <div class = "nav-bar">
                 <div class = "nav-buttons">
-                    <li
-                        id = "home"
+                    <div
+                        id = "Dfirst-item"
                         class={`nav-item  ${
                         props.location.pathname === "/Listings" ? "active" : ""
                         }`}
                     >
                         <Link class="nav-link" to="/Listings">
-                            Listings
+                        Make a new donation
                         </Link>
-                    </li>
+                    </div>
 
-                    <li
-                        id = "RHistory"
+                    <div
+                        id = "Dmiddle-item"
                         class={`nav-item  ${
                         props.location.pathname === "/Dhistory" ? "active" : ""
                         }`}
                     >
                         <Link class="nav-link" to="/Dhistory">
-                            History
+                        view donation history
                         </Link>
-                    </li>
+                    </div>
                     
-                    <li
-                        id = "resume"
+                    <div
+                        id = "Dlast-item"
                         class={`nav-item  ${
                         props.location.pathname === "/makeListing" ? "active" : ""
                         }`}
                     >
                         <Link class="nav-link" to="/makeListing">
-                            Make Listings
+                            team profile
                         </Link>
-                    </li>
+                    </div>
 
 
 
@@ -49,6 +49,6 @@ function Navigation(props) {
     );
 }
 
-export default withRouter(Navigation);
+export default withRouter(DNavigation);
 
 
