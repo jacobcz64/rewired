@@ -10,6 +10,7 @@ interface HistoryEntryProps {
 export default function HistoryEntry(props: HistoryEntryProps) {
     let recipientStatus = props.recipientFoundDate ? (<p>${props.recipientFoundDate}</p>) : (<p>Searching for Recipient</p>);
     let deliveryStatus = props.deliveredDate ? (<p>${props.deliveredDate}</p>) : (<p>Distribution Pending</p>);
+    console.log("entries");
 
     return (
         <div className='entry'>

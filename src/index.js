@@ -4,6 +4,9 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import App from './App';
 
+window.localStorage.setItem('recipientId', 1);
+window.localStorage.setItem('donorId', 1)
+
 ReactDOM.render(
   <React.StrictMode>
     <App />

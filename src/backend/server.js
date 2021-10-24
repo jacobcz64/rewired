@@ -4,7 +4,11 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const connection = require('./database');
+
 const port = process.env.PORT || 5000;
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 
 // This displays message that the server running and listening to specified port
 app.listen(port, () => console.log(`Listening on port ${port}`));
@@ -53,7 +57,7 @@ app.get('/requests', (req, res) => {
 // path: /get_listings?id=...
 app.get('/listings', (req, res) => {
     connection.query(
-        "SELECT * FROM Listing WHERE id = ?", req.query.id,
+        "SELECT * FROM Listing WHERE donor_id = ?", req.query.id,
         function(error, results) {
             if (error) throw error;
             res.json(results);
@@ -97,9 +101,12 @@ app.post('/request', (req, res) => {
 
 // Submits new listing
 app.post('/listing', (req, res) => {
+    let JSONBody = req.body;
+    console.log(JSONBody);
+
     connection.query(
         "INSERT INTO Listing (brand, device_type, model, quantity, donor_id) values (?, ?, ?, ?, ?)",
-        req.body.brand, req.body.device_type, req.body.model, req.body.quantity, req.donor.id,
+        [JSONBody.brand, JSONBody.device_type, JSONBody.model, JSONBody.quantity, JSONBody.id],
         function(error, results) {
             if (error) throw error;
             res.json(results);

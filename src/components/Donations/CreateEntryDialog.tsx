@@ -9,7 +9,7 @@ import {
     open: boolean;
     text: string;
     handleCancel: () => void;
-    handleConfirm: (deviceName: string, quantity: number) => void;
+    handleConfirm: (brand: string, type: string, model: string, quantity: number, donor_id: number) => void;
   }
 
   /**
@@ -76,11 +76,17 @@ import {
           </Button>
           <Button
             onClick={() => {
+              let typeInput: HTMLInputElement | null = document.getElementById('type-input') as HTMLInputElement;
               let nameInput: HTMLInputElement | null = document.getElementById('name-input') as HTMLInputElement;
+              let brandInput: HTMLInputElement | null = document.getElementById('brand-input') as HTMLInputElement;
               let quantityInput: HTMLInputElement | null = document.getElementById('quantity-input') as HTMLInputElement;
+
               
-              if (nameInput && quantityInput && nameInput.value !== "" && quantityInput.value !== "") {
-                props.handleConfirm(nameInput.value, Number(quantityInput.value));
+              if (typeInput && nameInput && brandInput && quantityInput &&
+                  typeInput.value !== "" && nameInput.value !== "" &&
+                  brandInput.value !== "" && quantityInput.value !== "") {
+                // donor_id temporarily hardcoded in as 1
+                props.handleConfirm(brandInput.value, typeInput.value, nameInput.value, Number(quantityInput.value), 1);
               } else {
                 props.handleCancel();
               }
