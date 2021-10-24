@@ -1,29 +1,40 @@
 import React from "react";
 import DNavigation from "./DNavigation";
+import Microsoft from "./files/microsoft.png";
+
 function DMakeListing() {
   return (
     <>
     <DNavigation />
     <div className="">
-      <div class="">
-        <div class="">
-          <div class="">
-            <img
-              class="top"
-              src="http://placehold.it/900x400"
+      <p className="page-title">DONOR PROFILE</p>
+      <div id="donor-box">
+        <div id="donor-text">
+        Team: Microsoft- Headquarters
+        <br/>
+        Location: <span class="underlined">Redmond, Washington</span>
+        <br/>
+        <br/>
+        Donor Representative: <span class="underlined">John Doe</span>
+        <br/>
+        Representative Email: <span class="underlined">jdoe@microsoft.com</span>
+        <br/>
+        <br/>
+        Total Donations Made: 20
+        <br/>
+        <br/>
+        Recipients Donated To:
+        <br/>
+        <span class="underlined"><li>Roots Young Adult Center (Seattle, WA)</li></span>
+        
+  
+        </div>
+        <div id></div>
+        <img
+              id="microsoft"
+              src={Microsoft}
               alt=""
             />
-          </div>
-          <div class="col-lg-5">
-            <h1 class="font-weight-light"></h1>
-            <p>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book.
-            </p>
-          </div>
-        </div>
       </div>
     </div>
     </>

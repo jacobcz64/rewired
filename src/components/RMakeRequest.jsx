@@ -1,29 +1,41 @@
 import React from "react";
 import Navigation from "./Navigation";
+import Roots from "./files/roots.png";
+
 function RMakeRequest() {
   return (
     <>
     <Navigation />
     <div className="">
-      <div class="">
-        <div class="">
-          <div class="">
-            <img
-              class="top"
-              src="http://placehold.it/900x400"
+      <p className="page-title">RECIPIENT PROFILE</p>
+      <div id="donor-box">
+        <div id="donor-text">
+        Team: Roots Young Adult Shelter
+        <br/>
+        Location: <span class="underlined">Seattle, Washington</span>
+        <br/>
+        <br/>
+        Donor Representative: <span class="underlined">Jane Smith</span>
+        <br/>
+        Representative Email: <span class="underlined">jsmith@roots.com</span>
+        <br/>
+        <br/>
+        Team Description: 
+Rising Out Of The Shadows
+ROOTS provides emergency shelter, hot meals, and essential services for young adults ages 18-25. Join us to make a difference in a young people’s lives.
+        <br/>
+        <br/>
+        
+        Team Website: <span class="underlined">https://www.rootsinfo.org</span>
+        <br/>
+  
+        </div>
+        <div id></div>
+        <img
+              id="microsoft"
+              src={Roots}
               alt=""
             />
-          </div>
-          <div class="col-lg-5">
-            <h1 class="font-weight-light"></h1>
-            <p>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book.
-            </p>
-          </div>
-        </div>
       </div>
     </div>
     </>
