@@ -11,8 +11,6 @@ export default function DonationHistory() {
     const [createEntryDialogIsOpen, setCreateEntryDialogIsOpen] = useState(false);
     const [successDialogIsOpen, setSuccessDialogIsOpen] = useState(false);
 
-    // Use something like this to add entries
-    // setHistory(history.concat([<HistoryEntry name='Google' quantity={2} date='3'/>]))
     const handleCancel = () => {
         setCreateEntryDialogIsOpen(false);
     }
@@ -24,6 +22,7 @@ export default function DonationHistory() {
         setSuccessDialogIsOpen(true);
         setTimeout(() => {setSuccessDialogIsOpen(false)}, 2500);
     }
+    
     return (
         <div>
             <p>Donation History</p>

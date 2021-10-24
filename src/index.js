@@ -3,10 +3,11 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import App from './App';
+import DonationHistory from './components/DonationHistory/DonationHistory'
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <DonationHistory />
   </React.StrictMode>,
 
   document.getElementById('root')
