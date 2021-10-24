@@ -1,7 +1,6 @@
 import React from "react";
-import Navigation from "./Navigation";
-
-function RRequests() {
+import Navigation from "./DNavigation";
+function DHistory() {
   return (
     <>
     <Navigation />
@@ -31,4 +30,4 @@ function RRequests() {
   );
 }
 
-export default RRequests;
+export default DHistory;
