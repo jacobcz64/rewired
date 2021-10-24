@@ -2,12 +2,10 @@ import {
     Button,
     Dialog,
     DialogActions,
-    DialogContent,
-    DialogContentText,
     DialogTitle,
   } from "@material-ui/core";
   
-  interface CancelConfirmDialogProps {
+  interface CreateEntryDialogProps {
     open: boolean;
     text: string;
     handleCancel: () => void;
@@ -17,7 +15,7 @@ import {
   /**
    * Dialog to add a new listing
    */
-  export default function CancelConfirmDialog(props: CancelConfirmDialogProps) {
+  export default function CreateEntryDialog(props: CreateEntryDialogProps) {
     return (
       <Dialog
         open={props.open}
@@ -27,17 +25,17 @@ import {
           CREATE A NEW DONATION
         </DialogTitle>
 
-        <label htmlFor='brand-input'>Device Brand</label>
-        <input id='brand-input' type='text'/>
-
         <label htmlFor='type-input'>Device Type</label>
         <input id='type-input' type='text'/>
 
-        <label htmlFor='name-input'>Device Name/Model</label>
-        <input id='name-input' type='text'/>
-
         <label htmlFor='quantity-input'>Quantity</label>
         <input id='quantity-input' type='number'/>
+
+        <label htmlFor='brand-input'>Device Brand</label>
+        <input id='brand-input' type='text'/>
+
+        <label htmlFor='name-input'>Device Name/Model</label>
+        <input id='name-input' type='text'/>
 
         <label htmlFor='accessories-input'>Any accessories included? (chargers, cases, etc.)</label>
         <input id='accessories-input' type='text'/>
@@ -68,6 +66,7 @@ import {
             onClick={() => {
               let nameInput: HTMLInputElement | null = document.getElementById('name-input') as HTMLInputElement;
               let quantityInput: HTMLInputElement | null = document.getElementById('quantity-input') as HTMLInputElement;
+              
               if (nameInput && quantityInput && nameInput.value !== "" && quantityInput.value !== "") {
                 props.handleConfirm(nameInput.value, Number(quantityInput.value));
               } else {
