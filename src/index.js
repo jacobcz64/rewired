@@ -1,28 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-<<<<<<< HEAD
-import LoginDialog from './LoginPage/LoginDialog'
-import DonationHistory from './components/DonationHistory/DonationHistory'
-=======
->>>>>>> garrett
 import reportWebVitals from './reportWebVitals';
 import App from './App';
 
 ReactDOM.render(
-<<<<<<< HEAD
-  // <React.StrictMode>
-  //   <App />
-  // </React.StrictMode>,
-  // <React.StrictMode>
-  //   <LoginDialog />
-  // </React.StrictMode>,
-  <React.StrictMode>
-    <DonationHistory />
-=======
   <React.StrictMode>
     <App />
->>>>>>> garrett
   </React.StrictMode>,
 
   document.getElementById('root')

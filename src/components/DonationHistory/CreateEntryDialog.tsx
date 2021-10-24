@@ -2,12 +2,10 @@ import {
     Button,
     Dialog,
     DialogActions,
-    DialogContent,
-    DialogContentText,
     DialogTitle,
   } from "@material-ui/core";
   
-  interface CancelConfirmDialogProps {
+  interface CreateEntryDialogProps {
     open: boolean;
     text: string;
     handleCancel: () => void;
@@ -17,7 +15,7 @@ import {
   /**
    * Dialog to add a new listing
    */
-  export default function CancelConfirmDialog(props: CancelConfirmDialogProps) {
+  export default function CreateEntryDialog(props: CreateEntryDialogProps) {
     return (
       <Dialog
         open={props.open}
