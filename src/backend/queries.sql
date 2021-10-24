@@ -33,11 +33,3 @@ INSERT INTO Listing (brand, device_type, model, quantity, donor_id) values ('App
 INSERT INTO Recipient (name) values ('Roots Young Adult Shelter');
 INSERT INTO Request (device_type, quantity, fulfilled, recipient_id) values ('tablet', 10, false, 1);
 
-# Get Donor
-
-# Get Recipient
-
-# Get Listing
-
-# Get Request
-
