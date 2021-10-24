@@ -2,6 +2,7 @@ import { useState } from "react";
 import DonationDetailsDialog from './DonationDetailsDialog';
 
 interface HistoryEntryProps {
+    key: number,
     name: string,
     quantity: number,
     date: string,

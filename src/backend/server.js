@@ -53,7 +53,7 @@ app.get('/requests', (req, res) => {
 // path: /get_listings?id=...
 app.get('/listings', (req, res) => {
     connection.query(
-        "SELECT * FROM Donor WHERE id = ?", req.query.id,
+        "SELECT * FROM Listing WHERE donor_id = ?", req.query.id,
         function(error, results) {
             if (error) throw error;
             res.json(results);

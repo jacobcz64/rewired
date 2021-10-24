@@ -5,10 +5,11 @@ import reportWebVitals from './reportWebVitals';
 import App from './App';
 import DonationHistory from './components/DonationHistory/DonationHistory'
 
+window.localStorage.setItem('recipientId', 1);
+window.localStorage.setItem('donorId', 1)
+
 ReactDOM.render(
-  <React.StrictMode>
-    <DonationHistory />
-  </React.StrictMode>,
+  <DonationHistory />,
 
   document.getElementById('root')
 );
