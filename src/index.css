@@ -99,17 +99,33 @@ code {
   margin-top: 4%;
 }
 
+#portal-bottom-left {
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  width: 50.25%;
+  height: 250px;
+}
+
+#portal-top-right {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  width: 50.25%;
+  height: 250px;
+}
+
 .vertical-line {
   background-color: #BAD4A6;
-  width: 4px;
-  height: 55%;
-  margin-top: 0%;
-  float: left;
+  width: 10px;
+  height: 100%;
+  left: calc(50% - 5px);
+  position:absolute;
 }
 
 .logo {
   width: 5%;
-  margin-left: 1%;
+  margin-left: 0%;
   float: left;
   overflow: hidden;
 }

@@ -2,9 +2,22 @@ import React from "react";
 import DLogin from "./DLogin";
 import Navigation from "./Navigation";
 import RLogin from "./RLogin";
+import BottomLeft from "./files/portalBottomLeft.png";
+import TopRight from "./files/portalTopRight.png";
 function Login() {
   return (
     <>
+    <img
+              id="portal-bottom-left"
+              src={BottomLeft}
+              alt=""
+            />
+
+<img
+              id="portal-top-right"
+              src={TopRight}
+              alt=""
+            />
     <div id="logo-space"> </div> 
     <div id="login-screen">
       <div class="logins">

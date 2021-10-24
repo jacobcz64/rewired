@@ -125,3 +125,11 @@ margin-top: 3%;
 .underlined {
     text-decoration: underline;
 }
+
+#pending-bottom-left {
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    width: 20%;
+    height: 200px;
+  }

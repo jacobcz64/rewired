@@ -8,6 +8,7 @@ import Dialog from '@mui/material/Dialog';
 import { DialogTitle } from '@material-ui/core';
 import { render } from '@testing-library/react';
 import React from 'react';
+import BottomLeft from '../files/pendingBottomLeft.png';
 
 interface DonationHistoryProps {
 
@@ -101,6 +102,11 @@ export default class DonationHistory extends React.Component<DonationHistoryProp
     render() {
         return (
             <div>
+                <img
+              id="pending-bottom-left"
+              src={BottomLeft}
+              alt=""
+            />
                 <Navigation />
                     <p className="page-title">Pending Donations</p>
                     <img
@@ -108,12 +114,11 @@ export default class DonationHistory extends React.Component<DonationHistoryProp
                     src={Search}
                     alt=""
                 />
-                <p>Donation History</p>
-                <input type="text" placeholder="Search.."></input>
-                <div id='history'>
+                <input id="search-bar" type="text" placeholder="Search.."></input>
+                <div id='donation-box'>
                     {this.state.history}
                 </div>
-                <button onClick={() => {
+                <button className="add" onClick={() => {
                     this.setState({
                         createEntryDialogIsOpen: true
                     })
