@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, withRouter } from "react-router-dom";
 
-function RLogin(props) {
+function DLogin(props) {
     
     return (
         <div className = "navigation">
@@ -10,11 +10,11 @@ function RLogin(props) {
                     <li
                         id = "home"
                         class={`nav-item  ${
-                        props.location.pathname === "/RRequests" ? "active" : ""
+                        props.location.pathname === "/Listings" ? "active" : ""
                         }`}
                     >
-                        <Link class="nav-link" to="/RRequests">
-                            DLogin not coded
+                        <Link class="nav-link" to="/Listings">
+                            Donor
                         </Link>
                     </li>
                 </div>
@@ -24,6 +24,6 @@ function RLogin(props) {
     );
 }
 
-export default withRouter(RLogin);
+export default withRouter(DLogin);
 
 
