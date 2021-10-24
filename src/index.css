@@ -184,3 +184,170 @@ color: #FFFFFF;
 
 text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
+
+.form {
+  padding: 20px;
+  background-color: #519872;
+  font-size: 12px;
+  color: #FFFFFF;
+  width: 93.3%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+
+
+.form-title {
+  font-size: 32px;
+  text-align: center;
+  color: #FFFFFF;
+  padding-bottom: 1%;
+}
+
+#type-input {
+  border-radius: 20px;
+  width: 95%;
+  margin-right: 20%;
+  margin-bottom: 10px;
+  padding-top: 1%;
+  margin-top: 1%;
+  padding-bottom: 1%;
+  padding-left: 1%;
+}
+
+#quantity-input {
+  border-radius: 20px;
+  width: 20%;
+  margin-right: 80%;
+  margin-bottom: 10px;
+  padding-top: 1%;
+  margin-top: 1%;
+  padding-bottom: 1%;
+  padding-left: 1%;
+}
+
+#brand-input {
+  border-radius: 20px;
+  width: 90%;
+  margin-right: 20%;
+  margin-bottom: 10px;
+  padding-top: 1%;
+  margin-top: 1%;
+  padding-bottom: 1%;
+  padding-left: 1%;
+}
+
+#name-input {
+  border-radius: 20px;
+  width: 90%;
+  margin-right: 20%;
+  margin-bottom: 10px;
+  padding-top: 1%;
+  margin-top: 1%;
+  padding-bottom: 1%;
+  padding-left: 1%;
+}
+
+#accessories-input {
+  border-radius: 20px;
+  width: 90%;
+  margin-right: 20%;
+  margin-bottom: 0%;
+  padding-bottom: 10%;
+  margin-top: 1%;
+  padding-left: 1%;
+}
+
+#address1-input {
+  border-radius: 20px;
+  width: 90%;
+  margin-right: 20%;
+  margin-bottom: 10px;
+  padding-top: 1%;
+  margin-top: 1%;
+  padding-bottom: 1%;
+  padding-left: 1%;
+}
+
+#address2-input {
+  border-radius: 20px;
+  width: 90%;
+  margin-right: 20%;
+  margin-bottom: 10px;
+  padding-top: 1%;
+  margin-top: 1%;
+  padding-bottom: 1%;
+  padding-left: 1%;
+}
+
+#city-input {
+  border-radius: 20px;
+  width: 25%;
+
+  margin-bottom: 10px;
+  padding-top: 1%;
+  margin-top: 1%;
+  padding-bottom: 1%;
+  padding-left: 1%;
+  margin-right: 5%;
+}
+
+#state-input {
+  border-radius: 20px;
+  width: 25%;
+
+  margin-bottom: 10px;
+  padding-top: 1%;
+  margin-top: 1%;
+  padding-bottom: 1%;
+  padding-left: 1%;
+  margin-right: 5%;
+}
+
+#zipcode-input {
+  border-radius: 20px;
+  width: 25%;
+
+  margin-bottom: 10px;
+  padding-top: 1%;
+  margin-top: 1%;
+  padding-bottom: 1%;
+  padding-left: 1%;
+  margin-right: 5%;
+}
+
+.location {
+  width: 33%;
+  float:left;
+}
+
+#email {
+  text-align: center;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+#check-box {
+  padding-left: 1%;
+  padding-right: 2%;
+  float: left;
+  color: #FFFFFF;
+  padding-top: 2%;
+}
+
+#not-check-box {
+  width: 90%;
+  float: left;
+  color: #FFFFFF;
+}
+
+#confirm {
+  border: 1px solid #FFFFFF;
+  box-sizing: border-box;
+  border-radius: 5px;
+  color: #519872;
+  padding: 20px;
+  margin-top: 3%;
+  padding-top: 10px;
+  padding-bottom: 40px;
+}

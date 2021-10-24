@@ -18,12 +18,14 @@ import {
   export default function CreateEntryDialog(props: CreateEntryDialogProps) {
     return (
       <Dialog
+        
         open={props.open}
         onClose={props.handleCancel}
       >
-        <DialogTitle>
+      <div className="form">
+        <div className="form-title">
           CREATE A NEW DONATION
-        </DialogTitle>
+        </div>
 
         <label htmlFor='type-input'>Device Type</label>
         <input id='type-input' type='text'/>
@@ -46,16 +48,26 @@ import {
         <label htmlFor='address2-input'>Address Line 2</label>
         <input id='address2-input' type='text'/>
         <div>
-          <label htmlFor='city-input'>City</label>
-          <input id='city-input' type='text'/>
-          <label htmlFor='state-input'>State/Province</label>
+          <div className="location" >City</div>
+          <div className="location" >State/Province</div>
+          <div className="location" >Zipcode</div>
           <input id='state-input' type='text'/>
-          <label htmlFor='zipcode-input'>Zipcode</label>
+          <input id='city-input' type='text'/>
           <input id='zipcode-input' type='number'/>
         </div>
 
-        <p>After submission of this form, you will receive an email to set up a quality validation meeting with our team. Once verified, your donation will be submitted and listed for request by a group/organization in need!</p>
+        <div id="email">After submission of this form, you will receive an email to set up a quality validation meeting with our team. 
+        {/* <br/>
+        <br/> */}
+        Once verified, your donation will be submitted and listed for request by a group/organization in need!</div>
 
+        <div id="confirm">
+          .
+          <div id="check-box"> 
+          <input type="checkbox"/>
+          </div>
+          <div id="not-check-box">I agree to meet with a representative from the REWIRED quality assurance team to verify the condition of my items, and understand that my request may be denied if submitted items are not qualified for redistribution. </div>  
+        </div>
         <DialogActions>
           <Button
             onClick={props.handleCancel}
@@ -83,6 +95,7 @@ import {
             Submit Donation
           </Button>
         </DialogActions>
+        </div>
       </Dialog>
     );
   }
