@@ -14,12 +14,13 @@ import DMakeListing from "./components/DMakeListing";
 import DHistory from "./components/DHistory";
 import logo from "./components/files/RW.png";
 import DListing from './components/Donations/Donations'
+import Matching from './components/Matching'
 
 export default function App() {
   return (
     <Router>
         <img
-              class="logo"
+              className="logo"
               src={logo}
               alt=""
             />
@@ -33,6 +34,7 @@ export default function App() {
           <Route path="/Listings" exact component={() => <DListing />} />
           <Route path="/MakeListing" exact component={() => <DMakeListing />} />
           <Route path="/Dhistory" exact component={() => <DHistory />} />
+          <Route path="/Matching" exact component={() => <Matching />} />
         </Switch>
     </Router>
   );

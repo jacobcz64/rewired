@@ -42,7 +42,7 @@ app.get('/recipients', (req, res) => {
 
 
 // Gets list of all requests associated to recipient id
-// path: /get_requests?id=...
+// path: /requests?id=...
 app.get('/requests', (req, res) => {
     connection.query(
         "SELECT * FROM Request WHERE id = ?", req.query.id,
@@ -113,3 +113,58 @@ app.post('/listing', (req, res) => {
         }
     );
 });
+
+// gets all possible combinations of requests and listings
+app.get('/get_matches', (req, res) => {
+    let listings;
+    connection.query(
+        "SELECT * FROM Listing",
+        function(error, results) {
+            if (error) throw error;
+            listings = results
+            //console.log(listings);
+
+            let requests;
+            connection.query(
+                "SELECT * FROM Request",
+                function(error, results_2) {
+                    if (error) throw error;
+                    requests = results_2;
+
+                    //console.log(requests);
+
+                    let matches = getMatches(listings, requests)
+                    res.send(JSON.stringify(matches));
+                }
+            )
+
+        }
+    )
+
+})
+
+function getMatches(listings, requests) {
+    let matches = [];
+    for (let i in listings) {
+        for (let j in requests) {
+            //console.log("current")
+            //console.log(listings[i])
+            //console.log(requests[j])
+            if (listings[i].device_type === requests[j].device_type) {
+                let match = {
+                    donor_id: listings[i].donor_id,
+                    d_quantity: listings[i].quantity,
+                    device_type: listings[i].device_type,
+                    brand: listings[i].brand,
+                    model: listings[i].model,
+                    recipient_id: requests[j].recipient_id,
+                    r_quantity: requests[j].quantity
+                };
+                //console.log("match!");
+                //console.log(match);
+                matches.push(match);
+            }
+        }
+    }
+    return matches;
+}
